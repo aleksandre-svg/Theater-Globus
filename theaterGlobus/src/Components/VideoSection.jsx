@@ -1,0 +1,67 @@
+// src/components/VideoSection.jsx
+import React from "react";
+
+const VideoSection = () => {
+  const videos = [
+    {
+      src: "/images/5c7d9684-58d3-44d2-a120-476f7832b1d6.mp4",
+      caption: "რეპეტიციის კადრი — ემოციური მომენტი სცენაზე",
+    },
+    {
+      src: "/images/a67ad576-b2b9-41d7-a9b5-93163bc6aeeb.mp4",
+      caption: "მსახიობების თამაშის პროცესის კადრები",
+    },
+    {
+      src: "/images/b8e28b26-ef3b-426c-8f11-bba45a79be3a.mp4",
+      caption: "სცენიდან უნიკალური ფრაგმენტი",
+    },
+  ];
+
+  return (
+    <section
+      id="video-section"
+      aria-label="Theater Globus video performances"
+      className="image01 strengthm5 cid-v20nubcwN9 mbr-fullscreen mbr-parallax-background"
+    >
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+
+          {/* Section Title */}
+          <header className="col-12 text-center mb-4">
+            <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+              თეატრი გვასწავლის თანაგრძნობას, სიყვარულს და ადამიანობის ძალას.
+            </h2>
+          </header>
+
+          {/* Video List */}
+          <div className="col-12">
+
+            {videos.map((video, index) => (
+              <figure
+                key={index}
+                className="image-wrap mb-4"
+                aria-label={`Video ${index + 1}: ${video.caption}`}
+              >
+                <video
+                  src={video.src}
+                  controls
+                  preload="metadata"
+                  loading="lazy"
+                  className="w-100 little-radius h-100"
+                ></video>
+
+                <figcaption className="mbr-fonts-style display-7 mt-2 text-center opacity-75">
+                  {video.caption}
+                </figcaption>
+              </figure>
+            ))}
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VideoSection;
