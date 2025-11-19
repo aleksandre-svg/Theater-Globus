@@ -2,20 +2,20 @@
 import React, { Suspense, lazy } from "react";
 
 // Lazy-load heavy sections to improve performance and SEO
-const Navbar = lazy(() => import("../../components/Navbar"));
-const Hero = lazy(() => import("../../components/Hero"));
-const Features = lazy(() => import("../../components/Features"));
-const GalleryVideos = lazy(() => import("../../components/GalleryVideos"));
-const SliderImages = lazy(() => import("../../components/SliderImages"));
-const VideoSection = lazy(() => import("../../components/VideoSection"));
-const CTA = lazy(() => import("../../components/CTA"));
-const Team = lazy(() => import("../../components/Team"));
-const TabsSection = lazy(() => import("../../components/TabsSection"));
-const FAQ = lazy(() => import("../../components/FAQ"));
-const MapSection = lazy(() => import("../../components/MapSection"));
-const ContactForm = lazy(() => import("../../components/ContactForm"));
-const ContactInfo = lazy(() => import("../../components/ContactInfo"));
-const Footer = lazy(() => import("../../components/Footer"));
+const Navbar = lazy(() => import("../../Components/Navbar.jsx"));
+const Hero = lazy(() => import("../../Components/Hero.jsx"));
+const Features = lazy(() => import("../../Components/Features.jsx"));
+const GalleryVideos = lazy(() => import("../../Components/GalleryVideos.jsx"));
+const SliderImages = lazy(() => import("../../Components/SliderImages.jsx"));
+const VideoSection = lazy(() => import("../../Components/VideoSection.jsx"));
+const CTA = lazy(() => import("../../Components/CTA.jsx"));
+const Team = lazy(() => import("../../Components/Team.jsx"));
+const TabsSection = lazy(() => import("../../Components/TabsSection.jsx"));
+const FAQ = lazy(() => import("../../Components/FAQ.jsx"));
+const MapSection = lazy(() => import("../../Components/MapSection.jsx"));
+const ContactForm = lazy(() => import("../../Components/ContactForm.jsx"));
+const ContactInfo = lazy(() => import("../../Components/ContactInfo.jsx"));
+const Footer = lazy(() => import("../../Components/Footer.jsx"));
 
 const HomeKA = () => {
   return (

@@ -1,8 +1,8 @@
 // src/App.jsx
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import HomeKA from "./Pages/ka/Home";
-import HomeEN from "./Pages/en/Home";
+import HomeKA from "./Pages/ka/Home.jsx";
+import HomeEN from "./Pages/en/Home.jsx";
 
 
 const App = () => {

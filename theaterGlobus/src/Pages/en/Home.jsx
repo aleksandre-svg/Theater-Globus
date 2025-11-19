@@ -1,20 +1,21 @@
 // src/pages/en/Home.jsx
-import React, { Suspense, lazy } from "react";
+import React, { lazy } from "react";
 
-const Navbar = lazy(() => import("../../Components/NavbarEN"));
-const Hero = lazy(() => import("../../Components/HeroEN"));
-const Features = lazy(() => import("../../Components/FeaturesEN"));
-const GalleryVideos = lazy(() => import("../../Components/GalleryVideosEN"));
-const SliderImages = lazy(() => import("../../Components/SliderImagesEN"));
-const VideoSection = lazy(() => import("../../Components/VideoSectionEN"));
-const CTA = lazy(() => import("../../Components/CTAEN"));
-const Team = lazy(() => import("../../Components/TeamEN"));
-const TabsSection = lazy(() => import("../../Components/TabsSectionEN"));
-const FAQ = lazy(() => import("../../Components/FAQEN"));
-const MapSection = lazy(() => import("../../Components/MapSectionEN"));
-const ContactForm = lazy(() => import("../../Components/ContactFormEN"));
-const ContactInfo = lazy(() => import("../../Components/ContactInfoEN"));
-const Footer = lazy(() => import("../../Components/FooterEN"));
+const Navbar = lazy(() => import("../../Components/NavbarEN.jsx"));
+const Hero = lazy(() => import("../../Components/HeroEN.jsx"));
+const Features = lazy(() => import("../../Components/FeaturesEN.jsx"));
+const GalleryVideos = lazy(() => import("../../Components/GalleryVideosEN.jsx"));
+const SliderImages = lazy(() => import("../../Components/SliderImagesEN.jsx"));
+const VideoSection = lazy(() => import("../../Components/VideoSectionEN.jsx"));
+const CTA = lazy(() => import("../../Components/CTAEN.jsx"));
+const Team = lazy(() => import("../../Components/TeamEN.jsx"));
+const TabsSection = lazy(() => import("../../Components/TabsSectionEN.jsx"));
+const FAQ = lazy(() => import("../../Components/FAQEN.jsx"));
+const MapSection = lazy(() => import("../../Components/MapSectionEN.jsx"));
+const ContactForm = lazy(() => import("../../Components/ContactFormEN.jsx"));
+const ContactInfo = lazy(() => import("../../Components/ContactInfoEN.jsx"));
+const Footer = lazy(() => import("../../Components/FooterEN.jsx"));
+
 const HomeEN = () => {
   return (
     <>
