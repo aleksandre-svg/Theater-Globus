@@ -2,9 +2,27 @@
 import React from "react";
 
 const ContactForm = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add form submit logic here (EmailJS, backend, etc.)
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const data = {
+        name: e.target.name.value,
+        number: e.target.number.value,
+        message: e.target.message.value,
+      };
+
+      const res = await fetch("https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.status === "success") {
+        alert("Message sent!");
+        e.target.reset();
+      } else {
+        alert("Error sending message.");
+      }
   };
 
   return (
@@ -49,6 +67,7 @@ const ContactForm = () => {
                       placeholder="სახელი"
                       required
                       aria-required="true"
+                      name="name"
                     />
                   </div>
 
@@ -64,6 +83,7 @@ const ContactForm = () => {
                       placeholder="ტელეფონის ნომერი"
                       required
                       aria-required="true"
+                      name="number"
                     />
                   </div>
 
@@ -79,6 +99,7 @@ const ContactForm = () => {
                       rows="5"
                       required
                       aria-required="true"
+                      name="message"
                     ></textarea>
                   </div>
 
