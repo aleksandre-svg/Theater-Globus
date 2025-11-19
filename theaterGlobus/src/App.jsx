@@ -1,22 +1,24 @@
-// src/App.jsx
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
 import HomeKA from "./Pages/ka/Home.jsx";
 import HomeEN from "./Pages/en/Home.jsx";
 
+function Root() {
+  const location = useLocation();
+  const lang = location.pathname.startsWith("/en") ? "en" : "ka";
 
-const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomeKA lang={lang} />} />
+      <Route path="/en" element={<HomeEN lang={lang} />} />
+    </Routes>
+  );
+}
+
+export default function App() {
   return (
     <BrowserRouter>
-        <Routes>
-          {/* Georgian */}
-          <Route path="/" element={<HomeKA />} />
-
-          {/* English */}
-          <Route path="/en" element={<HomeEN />} />
-        </Routes>
+      <Root />
     </BrowserRouter>
   );
-};
-
-export default App;
+}

@@ -1,5 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -68,9 +69,9 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white display-4" href="/en">
-                  View In English
-                </a>
+                <Link className="nav-link text-white display-4" to="/en">
+                  View in English
+                </Link>
               </li>
             </ul>
 

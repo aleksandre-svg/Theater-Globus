@@ -1,5 +1,6 @@
 // src/components/NavbarEN.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavbarEN = () => {
   return (
@@ -63,9 +64,9 @@ const NavbarEN = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white display-4" href="/">
+                <Link className="nav-link text-white display-4" to="/">
                   View in Georgian
-                </a>
+                </Link>
               </li>
             </ul>
 
