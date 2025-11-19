@@ -34,7 +34,7 @@ const CTA = () => {
               <div className="mbr-section-btn">
                 <a
                   className="btn btn-primary display-7"
-                  href="#tickets" 
+                  href="#contact" 
                   aria-label="შეიძინე ბილეთები"
                 >
                   შეიძინე ბილეთები

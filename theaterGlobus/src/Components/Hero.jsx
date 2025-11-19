@@ -46,7 +46,7 @@ const Hero = () => {
               <div className="mbr-section-btn">
                 <a
                   className="btn btn-white display-7"
-                  href="#performances"
+                  href="#video-section"
                   aria-label="ნახე ჩვენი დადგმები"
                 >
                   დადგმების ნახვა

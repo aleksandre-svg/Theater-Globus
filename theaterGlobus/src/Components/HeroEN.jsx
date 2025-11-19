@@ -49,7 +49,7 @@ const HeroEN = () => {
               <div className="mbr-section-btn">
                 <a
                   className="btn btn-white display-7"
-                  href="#performances"
+                  href="#video-section"
                   aria-label="View our performances"
                 >
                   View Performances

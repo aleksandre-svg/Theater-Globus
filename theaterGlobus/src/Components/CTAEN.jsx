@@ -34,7 +34,7 @@ const CTAEN = () => {
               <div className="mbr-section-btn">
                 <a
                   className="btn btn-primary display-7"
-                  href="#tickets"
+                  href="#contact"
                   aria-label="Buy Tickets"
                 >
                   Buy Tickets
