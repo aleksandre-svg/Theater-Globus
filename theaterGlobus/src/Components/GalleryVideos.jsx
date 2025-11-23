@@ -45,7 +45,7 @@ const GalleryVideos = () => {
           >
             <div className="item-wrapper little-radius">
               <video
-                className="repetition little-radius"
+                className="repetition little-radius w-100 h-100"
                 controls
                 preload="metadata"
                 aria-label="რეპეტიციის ვიდეო 1"
@@ -66,7 +66,7 @@ const GalleryVideos = () => {
           >
             <div className="item-wrapper little-radius">
               <video
-                className="repetition little-radius"
+                className="repetition little-radius w-100 h-100"
                 controls
                 preload="metadata"
                 aria-label="რეპეტიციის ვიდეო 2"
@@ -88,7 +88,7 @@ const GalleryVideos = () => {
           >
             <div className="item-wrapper little-radius" >
               <video
-                className="repetition little-radius"
+                className="repetition little-radius w-100 h-100"
                 controls
                 preload="metadata"
                 aria-label="რეპეტიციის ვიდეო 3"
