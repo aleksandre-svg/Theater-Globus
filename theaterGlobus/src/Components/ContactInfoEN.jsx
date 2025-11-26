@@ -77,7 +77,27 @@ const ContactInfoEN = () => {
                   </p>
                 </div>
               </article>
-
+              <article
+                className="item features-without-image"
+                aria-label="Email contact"
+              >
+                <div className="item-wrapper">
+                  <h4 className="card-title mbr-fonts-style display-5 fw-bold">
+                    Visit our Social Q:
+                  </h4>
+                  <br />
+                  <p className="card-text mbr-fonts-style display-5">
+                    <strong>
+                      <a href="https://www.facebook.com/groups/1493684781741363">
+                        <i className="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="https://www.tiktok.com/@teatriglobusi?_r=1&_t=ZS-91hYCfcPOsc">
+                        <i className="fa-brands fa-tiktok"></i>
+                      </a>
+                    </strong>
+                  </p>
+                </div>
+              </article>
             </div>
 
           </div>

@@ -26,7 +26,7 @@ const Hero = () => {
                 კეთილი იყოს თქვენი ფეხი
               </p>
 
-              <h1 className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title" style={{fontSize: "70px"}}>
+              <h1 className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title hero-title1">
                 თეატრი გლობუსი: ადგილი სადაც ვარკვლავები იბადებიან
               </h1>
 

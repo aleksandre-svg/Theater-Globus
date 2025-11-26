@@ -8,10 +8,6 @@ const VideoSection = () => {
       caption: "რეპეტიციის კადრი — ემოციური მომენტი სცენაზე",
     },
     {
-      src: "/images/a67ad576-b2b9-41d7-a9b5-93163bc6aeeb.mp4",
-      caption: "მსახიობების თამაშის პროცესის კადრები",
-    },
-    {
       src: "/images/b8e28b26-ef3b-426c-8f11-bba45a79be3a.mp4",
       caption: "სცენიდან უნიკალური ფრაგმენტი",
     },

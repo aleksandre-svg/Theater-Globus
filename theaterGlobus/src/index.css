@@ -1398,7 +1398,21 @@
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -webkit-tap-highlight-color: transparent;
+    overflow: scroll;
 }
+.embla__container {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow: scroll;
+    gap: 15px;
+}
+
+.embla__container::-webkit-scrollbar {
+  display: none;
+}
+
 
 .cid-v20nubcC2r .item-menu-overlay {
     opacity: 0 !important;
@@ -1417,6 +1431,9 @@
     color: #666666;
 }
 
+i {
+    padding-left: 15px;
+}
 
 .cid-v20nubcwN9 .mbr-fallback-image.disabled {
     display: none;
@@ -4924,3 +4941,11 @@
     color: #ff6d99;
 }
 
+.hero-title1 {
+    font-size: 60px;
+}
+@media (max-width:670px){
+    .hero-title1 {
+        font-size: 40px;
+    }
+}

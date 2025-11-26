@@ -73,7 +73,7 @@ const NavbarEN = () => {
             {/* CTA BUTTON */}
             <div className="navbar-buttons mbr-section-btn ms-lg-3">
               <a
-                href="#contact"
+                href="#contact-info"
                 className="btn btn-primary display-7"
                 aria-label="Buy tickets"
               >
