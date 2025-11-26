@@ -6,7 +6,6 @@ const Navbar = lazy(() => import("../../Components/Navbar.jsx"));
 const Hero = lazy(() => import("../../Components/Hero.jsx"));
 const Features = lazy(() => import("../../Components/Features.jsx"));
 const GalleryVideos = lazy(() => import("../../Components/GalleryVideos.jsx"));
-const SliderImages = lazy(() => import("../../Components/SliderImages.jsx"));
 const VideoSection = lazy(() => import("../../Components/VideoSection.jsx"));
 const CTA = lazy(() => import("../../Components/CTA.jsx"));
 const Team = lazy(() => import("../../Components/Team.jsx"));
@@ -36,11 +35,6 @@ const HomeKA = () => {
           {/* Video Gallery */}
           <section aria-label="Gallery videos">
             <GalleryVideos />
-          </section>
-
-          {/* Image Slider */}
-          <section aria-label="Image slider">
-            <SliderImages />
           </section>
 
           {/* Promo Video */}
