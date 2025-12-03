@@ -256,7 +256,7 @@ const Team = () => {
                 className="embla__button embla__button--prev"
                 aria-label="Previous slide"
                 onClick={() => {
-                  scroll.current.scrollBy({left: 360, behavior: "smooth"})
+                  scroll.current.scrollBy({left: -360, behavior: "smooth"})
                 }}
               >
                 <span
