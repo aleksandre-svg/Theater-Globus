@@ -63,32 +63,32 @@ const Team = () => {
                     {
                       name: "დავით რეხვიაშვილი",
                       img: "/images/82db3402-155f-4929-98b0-f1c1b3f9a94b.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "ირაკლი ფირცხალავა",
                       img: "/images/cf0e550f-722f-4edb-9327-fc8cc8466870.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "ბარბარე მომცემლიძე",
                       img: "/images/506cabbd-994d-40dc-895e-f56f9985caf5.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "ანა ოკუჯავა",
                       img: "/images/441b29a0-670b-4763-bdf2-18cbb9a89955.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "თათული ხუციშვილი",
                       img: "/images/94d8d428-08cb-4073-87a6-c64f08a46d43.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "ნინო ნოზაძე",
                       img: "/images/00bd14de-6192-4c2b-b911-1707e67d7cb9.jpg",
-                      role: "",
+                      role: "მსახიობი",
                     },
                     {
                       name: "კობა სხილაძე",
