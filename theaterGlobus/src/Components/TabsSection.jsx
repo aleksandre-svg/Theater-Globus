@@ -10,7 +10,6 @@ const TabsSection = () => {
     >
       <div className="container-fluid">
         <div className="row justify-content-center">
-
           <div className="col-12 col-lg-10">
 
             <div className="card-wrapper flex-row-reverse">
@@ -19,21 +18,25 @@ const TabsSection = () => {
               <div className="image-wrapper">
                 <img
                   src="/images/d3977e4b-1d46-4c78-a96a-f23c41a2893a.jpg"
-                  alt="Theater stage at Globus"
+                  alt="Stage view inside Theater Globus"
                   className="little-radius"
                   loading="lazy"
                 />
               </div>
 
-              {/* CONTENT / TABS */}
+              {/* TABS + CONTENT */}
               <div className="content-wrapper">
 
+                {/* TAB HEADERS */}
                 <div className="tabs-wrapper">
-                  <ul className="nav nav-tabs" role="tablist">
-
-                    {/* TAB 1 BUTTON */}
-                    <li className="nav-item">
+                  <ul
+                    className="nav nav-tabs"
+                    role="tablist"
+                    aria-orientation="horizontal"
+                  >
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link active mbr-fonts-style little-radius display-4"
                         id="tab1-btn"
                         data-bs-toggle="tab"
@@ -46,9 +49,9 @@ const TabsSection = () => {
                       </button>
                     </li>
 
-                    {/* TAB 2 BUTTON */}
-                    <li className="nav-item">
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link mbr-fonts-style little-radius display-4"
                         id="tab2-btn"
                         data-bs-toggle="tab"
@@ -61,9 +64,9 @@ const TabsSection = () => {
                       </button>
                     </li>
 
-                    {/* TAB 3 BUTTON */}
-                    <li className="nav-item">
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link mbr-fonts-style little-radius display-4"
                         id="tab3-btn"
                         data-bs-toggle="tab"
@@ -75,14 +78,17 @@ const TabsSection = () => {
                         დაუიწყარი საათები
                       </button>
                     </li>
-
                   </ul>
                 </div>
 
                 {/* TAB CONTENT */}
-                <div className="tab-content mt-4">
+                <div
+                  className="tab-content mt-4"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
 
-                  {/* TAB 1 CONTENT */}
+                  {/* TAB 1 */}
                   <article
                     className="tab-pane fade show active"
                     id="tab1"
@@ -90,10 +96,7 @@ const TabsSection = () => {
                     aria-labelledby="tab1-btn"
                   >
                     <div className="item-content">
-
-                      <div className="image-wrap">
-                        
-                      </div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         დამთრგუნველი სიმყუდროვე
@@ -107,11 +110,10 @@ const TabsSection = () => {
                         ჩვენი თეატრი გამოირჩევა სიმყუდროვით, სუფთა ხმის იზოლაციით
                         და ზედმეტი ხმაურის გარეშე.
                       </p>
-
                     </div>
                   </article>
 
-                  {/* TAB 2 CONTENT */}
+                  {/* TAB 2 */}
                   <article
                     className="tab-pane fade"
                     id="tab2"
@@ -119,10 +121,7 @@ const TabsSection = () => {
                     aria-labelledby="tab2-btn"
                   >
                     <div className="item-content">
-
-                      <div className="image-wrap">
-                       
-                      </div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         არაჩვეულებრივი თამაშის დონის მსახიობები
@@ -131,11 +130,10 @@ const TabsSection = () => {
                       <p className="item-text mbr-fonts-style display-7">
                         ტალანტი იგრძნობა შესვლისთანავე.
                       </p>
-
                     </div>
                   </article>
 
-                  {/* TAB 3 CONTENT */}
+                  {/* TAB 3 */}
                   <article
                     className="tab-pane fade"
                     id="tab3"
@@ -143,10 +141,7 @@ const TabsSection = () => {
                     aria-labelledby="tab3-btn"
                   >
                     <div className="item-content">
-
-                      <div className="image-wrap">
-                        
-                      </div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         დაუიწყარი საათები
@@ -156,7 +151,6 @@ const TabsSection = () => {
                         ჩვენს თეატრში გატარებული საათები მთელი ცხოვრება
                         დაგამახსოვრდებათ.
                       </p>
-
                     </div>
                   </article>
 
@@ -164,10 +158,10 @@ const TabsSection = () => {
                 {/* END TAB CONTENT */}
 
               </div>
+
             </div>
 
           </div>
-
         </div>
       </div>
     </section>

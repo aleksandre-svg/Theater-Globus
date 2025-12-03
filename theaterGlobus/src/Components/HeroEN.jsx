@@ -5,7 +5,7 @@ const HeroEN = () => {
   return (
     <section
       id="hero"
-      aria-label="Theater Globus hero section"
+      aria-labelledby="hero-title-en"
       className="header01 strengthm5 cid-v20nubbrab mbr-parallax-background"
     >
       {/* Overlay */}
@@ -18,7 +18,7 @@ const HeroEN = () => {
       <div className="container-fluid">
         <div className="row justify-content-center align-items-center">
 
-          {/* LEFT SIDE – TITLE */}
+          {/* LEFT SIDE — TITLE */}
           <div className="col-12 col-lg-5 card">
             <header className="title-wrapper">
 
@@ -26,17 +26,19 @@ const HeroEN = () => {
                 Welcome
               </p>
 
-              <h1
-                className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title"
-                style={{ fontSize: "70px" }}
-              >
-                Theater Globus: A Place Where Stars Are Born
-              </h1>
+              <hgroup>
+                <h1
+                  id="hero-title-en"
+                  className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title"
+                >
+                  Theater Globus: A Place Where Stars Are Born
+                </h1>
+              </hgroup>
 
             </header>
           </div>
 
-          {/* RIGHT SIDE – TEXT */}
+          {/* RIGHT SIDE — TEXT */}
           <div className="col-12 col-lg-5 card">
             <div className="text-wrapper">
 
@@ -50,7 +52,7 @@ const HeroEN = () => {
                 <a
                   className="btn btn-white display-7"
                   href="#video-section"
-                  aria-label="View our performances"
+                  role="button"
                 >
                   View Performances
                 </a>

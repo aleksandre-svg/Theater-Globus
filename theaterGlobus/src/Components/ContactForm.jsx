@@ -1,29 +1,46 @@
 // src/components/ContactForm.jsx
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 const ContactForm = () => {
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const data = {
-        name: e.target.name.value,
-        number: e.target.number.value,
-        message: e.target.message.value,
-      };
+  const [status, setStatus] = useState(null); // success | error | sending
 
-      const res = await fetch("https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault();
+
+    if (status === "sending") return; // Prevent double submits
+    setStatus("sending");
+
+    const form = e.target;
+    const data = {
+      name: form.name.value.trim(),
+      number: form.number.value.trim(),
+      message: form.message.value.trim(),
+    };
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json", // Best practice
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await res.json();
 
       if (result.status === "success") {
-        alert("Message sent!");
-        e.target.reset();
+        setStatus("success");
+        form.reset();
       } else {
-        alert("Error sending message.");
+        setStatus("error");
       }
-  };
+    } catch (err) {
+      setStatus("error");
+    }
+  }, [status]);
 
   return (
     <section
@@ -38,7 +55,6 @@ const ContactForm = () => {
           <div className="col-12 col-lg-4 card">
             <div className="content-wrapper">
 
-              {/* Section title */}
               <p className="mbr-label mbr-fonts-style display-7 fw-bold">
                 დაგვიკავშირდით
               </p>
@@ -47,7 +63,12 @@ const ContactForm = () => {
                 ნებისმიერი კითხვის შემთხვევაში, მოგვწერეთ
               </h2>
 
-              {/* Contact Form */}
+              {/* Accessible live region for messages */}
+              <div aria-live="polite" className="visually-hidden">
+                {status === "success" && "შეტყობინება გაიგზავნა!"}
+                {status === "error" && "დაფიქსირდა შეცდომა."}
+              </div>
+
               <form
                 className="mbr-form form-with-styler"
                 onSubmit={handleSubmit}
@@ -57,7 +78,7 @@ const ContactForm = () => {
 
                   {/* Name */}
                   <div className="col-lg-6 col-md-12 form-group mb-3">
-                    <label htmlFor="name" className="visually-hidden">
+                    <label htmlFor="name" className="fw-semibold">
                       სახელი
                     </label>
                     <input
@@ -66,30 +87,30 @@ const ContactForm = () => {
                       className="form-control display-7"
                       placeholder="სახელი"
                       required
-                      aria-required="true"
+                      autoComplete="name"
                       name="name"
                     />
                   </div>
 
-                  {/* Email */}
+                  {/* Phone */}
                   <div className="col-lg-6 col-md-12 form-group mb-3">
-                    <label htmlFor="email" className="visually-hidden">
-                      ტელეფონის ნომერი:
+                    <label htmlFor="number" className="fw-semibold">
+                      ტელეფონის ნომერი
                     </label>
                     <input
                       id="number"
-                      type="number"
+                      type="tel"
                       className="form-control display-7"
                       placeholder="ტელეფონის ნომერი"
                       required
-                      aria-required="true"
+                      autoComplete="tel"
                       name="number"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="col-12 form-group mb-3">
-                    <label htmlFor="message" className="visually-hidden">
+                    <label htmlFor="message" className="fw-semibold">
                       შეტყობინება
                     </label>
                     <textarea
@@ -98,19 +119,18 @@ const ContactForm = () => {
                       placeholder="შეტყობინება"
                       rows="5"
                       required
-                      aria-required="true"
                       name="message"
                     ></textarea>
                   </div>
 
-                  {/* Submit button */}
+                  {/* Submit */}
                   <div className="col-md-auto mbr-section-btn">
                     <button
                       type="submit"
+                      disabled={status === "sending"}
                       className="btn btn-primary display-7"
-                      aria-label="გაგზავნა"
                     >
-                      გაგზავნა
+                      {status === "sending" ? "იგზავნება..." : "გაგზავნა"}
                     </button>
                   </div>
                 </div>
@@ -125,6 +145,8 @@ const ContactForm = () => {
                 src="/images/contact.png"
                 alt="Contact us illustration"
                 loading="lazy"
+                width="100%"
+                height="auto"
               />
             </div>
           </div>

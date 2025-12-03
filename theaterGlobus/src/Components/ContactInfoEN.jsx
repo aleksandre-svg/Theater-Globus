@@ -5,24 +5,28 @@ const ContactInfoEN = () => {
   return (
     <section
       id="contact-info"
-      aria-label="Contact information"
+      aria-labelledby="contact-info-title"
       className="contacts01 strengthm5 cid-v20nubevk7"
     >
       <div className="container">
         <div className="row">
           <div className="col-12">
 
-            {/* Section Label */}
-            <p className="mbr-label mbr-fonts-style display-7 fw-bold">
+            {/* SECTION LABEL */}
+            <p
+              id="contact-info-title"
+              className="mbr-label mbr-fonts-style display-7 fw-bold"
+            >
               Visit Us
             </p>
 
-            <div className="items-wrapper">
+            <div className="items-wrapper" role="list">
 
               {/* PHONE NUMBERS */}
               <article
                 className="item features-without-image"
-                aria-label="Phone numbers"
+                role="listitem"
+                aria-label="Phone contact information"
               >
                 <div className="item-wrapper">
                   <h4 className="card-title mbr-fonts-style display-5 fw-bold">
@@ -32,11 +36,28 @@ const ContactInfoEN = () => {
                   <address className="card-text mbr-fonts-style display-5">
                     <strong>
                       Irakli —{" "}
-                      <a href="tel:+995555559083">📞 555-55-90-83</a> <br />
+                      <a
+                        href="tel:+995555559083"
+                        aria-label="Call Irakli at 555 55 90 83"
+                      >
+                        📞 555-55-90-83
+                      </a>
+                      <br />
                       Koba —{" "}
-                      <a href="tel:+995599422405">📞 599-42-24-05</a> <br />
+                      <a
+                        href="tel:+995599422405"
+                        aria-label="Call Koba at 599 42 24 05"
+                      >
+                        📞 599-42-24-05
+                      </a>
+                      <br />
                       Taso —{" "}
-                      <a href="tel:+995511410521">📞 511-41-05-21</a>
+                      <a
+                        href="tel:+995511410521"
+                        aria-label="Call Taso at 511 41 05 21"
+                      >
+                        📞 511-41-05-21
+                      </a>
                     </strong>
                   </address>
                 </div>
@@ -45,7 +66,8 @@ const ContactInfoEN = () => {
               {/* ADDRESS */}
               <article
                 className="item features-without-image"
-                aria-label="Address"
+                role="listitem"
+                aria-label="Physical address"
               >
                 <div className="item-wrapper">
                   <h4 className="card-title mbr-fonts-style display-5 fw-bold">
@@ -62,6 +84,7 @@ const ContactInfoEN = () => {
               {/* EMAIL */}
               <article
                 className="item features-without-image"
+                role="listitem"
                 aria-label="Email contact"
               >
                 <div className="item-wrapper">
@@ -70,34 +93,50 @@ const ContactInfoEN = () => {
                   </h4>
                   <p className="card-text mbr-fonts-style display-5">
                     <strong>
-                      <a href="mailto:ნონო@theaterglobus.com">
+                      <a
+                        href="mailto:theaterglobus2025@gmail.com"
+                        aria-label="Send email to theaterglobus2025@gmail.com"
+                      >
                         theaterglobus2025@gmail.com
                       </a>
                     </strong>
                   </p>
                 </div>
               </article>
+
+              {/* SOCIAL LINKS */}
               <article
                 className="item features-without-image"
-                aria-label="Email contact"
+                role="listitem"
+                aria-label="Social media links"
               >
                 <div className="item-wrapper">
                   <h4 className="card-title mbr-fonts-style display-5 fw-bold">
-                    Visit our Social Q:
+                    Visit our Socials
                   </h4>
-                  <br />
-                  <p className="card-text mbr-fonts-style display-5">
+
+                  <p className="card-text mbr-fonts-style display-5 mt-2">
                     <strong>
-                      <a href="https://www.facebook.com/groups/1493684781741363">
+                      <a
+                        href="https://www.facebook.com/groups/1493684781741363"
+                        aria-label="Visit our Facebook page"
+                      >
                         <i className="fa-brands fa-facebook"></i>
                       </a>
-                      <a href="https://www.tiktok.com/@teatriglobusi?_r=1&_t=ZS-91hYCfcPOsc">
+
+                      <span className="mx-3"></span>
+
+                      <a
+                        href="https://www.tiktok.com/@teatriglobusi?_r=1&_t=ZS-91hYCfcPOsc"
+                        aria-label="Visit our TikTok page"
+                      >
                         <i className="fa-brands fa-tiktok"></i>
                       </a>
                     </strong>
                   </p>
                 </div>
               </article>
+
             </div>
 
           </div>

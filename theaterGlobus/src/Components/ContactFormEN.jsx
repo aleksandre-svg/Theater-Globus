@@ -1,29 +1,45 @@
 // src/components/ContactFormEN.jsx
-import React from "react";
-// https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec
-const ContactFormEN = (e) => {
-  const handleSubmit = async (e) => {
+import React, { useState, useCallback } from "react";
+
+const ContactFormEN = () => {
+  const [status, setStatus] = useState(null); // "sending" | "success" | "error"
+
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
+
+    if (status === "sending") return; // Prevent double-submit
+    setStatus("sending");
+
+    const form = e.target;
+
     const data = {
-      name: e.target.name.value,
-      number: e.target.number.value,
-      message: e.target.message.value,
+      name: form.name.value.trim(),
+      number: form.number.value.trim(),
+      message: form.message.value.trim(),
     };
 
-    const res = await fetch("https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbzMMKq67tnkOutKam3KNVhJm_ivQ0TbqaJ6dPZPlSLdnt-17ZaKVegLMBBDLvInnmiJ/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
-    const result = await res.json();
+      const result = await res.json();
 
-    if (result.status === "success") {
-      alert("Message sent!");
-      e.target.reset();
-    } else {
-      alert("Error sending message.");
+      if (result.status === "success") {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
     }
-  };
+  }, [status]);
 
   return (
     <section
@@ -38,7 +54,6 @@ const ContactFormEN = (e) => {
           <div className="col-12 col-lg-4 card">
             <div className="content-wrapper">
 
-              {/* Section title */}
               <p className="mbr-label mbr-fonts-style display-7 fw-bold">
                 Contact Us
               </p>
@@ -47,7 +62,12 @@ const ContactFormEN = (e) => {
                 If you have any questions, feel free to write to us
               </h2>
 
-              {/* Contact Form */}
+              {/* Accessible live message region */}
+              <div aria-live="polite" className="visually-hidden">
+                {status === "success" && "Message sent successfully!"}
+                {status === "error" && "Error sending message."}
+              </div>
+
               <form
                 className="mbr-form form-with-styler"
                 onSubmit={handleSubmit}
@@ -57,7 +77,7 @@ const ContactFormEN = (e) => {
 
                   {/* Name */}
                   <div className="col-lg-6 col-md-12 form-group mb-3">
-                    <label htmlFor="name" className="visually-hidden">
+                    <label htmlFor="name" className="fw-semibold">
                       Name
                     </label>
                     <input
@@ -66,30 +86,30 @@ const ContactFormEN = (e) => {
                       className="form-control display-7"
                       placeholder="Name"
                       required
-                      aria-required="true"
+                      autoComplete="name"
                       name="name"
                     />
                   </div>
 
-                  {/* Email */}
+                  {/* Phone */}
                   <div className="col-lg-6 col-md-12 form-group mb-3">
-                    <label htmlFor="email" className="visually-hidden">
-                      phone number
+                    <label htmlFor="number" className="fw-semibold">
+                      Phone Number
                     </label>
                     <input
                       id="number"
-                      type="number"
+                      type="tel"
                       className="form-control display-7"
-                      placeholder="phone number"
+                      placeholder="Phone Number"
                       required
-                      aria-required="true"
+                      autoComplete="tel"
                       name="number"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="col-12 form-group mb-3">
-                    <label htmlFor="message" className="visually-hidden">
+                    <label htmlFor="message" className="fw-semibold">
                       Message
                     </label>
                     <textarea
@@ -98,19 +118,19 @@ const ContactFormEN = (e) => {
                       placeholder="Message"
                       rows="5"
                       required
-                      aria-required="true"
                       name="message"
                     ></textarea>
                   </div>
 
-                  {/* Submit button */}
+                  {/* Submit */}
                   <div className="col-md-auto mbr-section-btn">
                     <button
                       type="submit"
+                      disabled={status === "sending"}
                       className="btn btn-primary display-7"
-                      aria-label="Send"
+                      aria-label="Send message"
                     >
-                      Send
+                      {status === "sending" ? "Sending..." : "Send"}
                     </button>
                   </div>
                 </div>
@@ -125,6 +145,8 @@ const ContactFormEN = (e) => {
                 src="/images/contact.png"
                 alt="Contact us illustration"
                 loading="lazy"
+                width="100%"
+                height="auto"
               />
             </div>
           </div>

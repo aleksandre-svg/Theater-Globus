@@ -29,11 +29,16 @@ const TabsSectionEN = () => {
               <div className="content-wrapper">
 
                 <div className="tabs-wrapper">
-                  <ul className="nav nav-tabs" role="tablist">
+                  <ul
+                    className="nav nav-tabs"
+                    role="tablist"
+                    aria-orientation="horizontal"
+                  >
 
                     {/* TAB 1 BUTTON */}
-                    <li className="nav-item">
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link active mbr-fonts-style little-radius display-4"
                         id="tab1-btn"
                         data-bs-toggle="tab"
@@ -47,8 +52,9 @@ const TabsSectionEN = () => {
                     </li>
 
                     {/* TAB 2 BUTTON */}
-                    <li className="nav-item">
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link mbr-fonts-style little-radius display-4"
                         id="tab2-btn"
                         data-bs-toggle="tab"
@@ -62,8 +68,9 @@ const TabsSectionEN = () => {
                     </li>
 
                     {/* TAB 3 BUTTON */}
-                    <li className="nav-item">
+                    <li className="nav-item" role="presentation">
                       <button
+                        type="button"
                         className="nav-link mbr-fonts-style little-radius display-4"
                         id="tab3-btn"
                         data-bs-toggle="tab"
@@ -80,7 +87,11 @@ const TabsSectionEN = () => {
                 </div>
 
                 {/* TAB CONTENT */}
-                <div className="tab-content mt-4">
+                <div
+                  className="tab-content mt-4"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
 
                   {/* TAB 1 CONTENT */}
                   <article
@@ -91,7 +102,7 @@ const TabsSectionEN = () => {
                   >
                     <div className="item-content">
 
-                      <div className="image-wrap"></div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         Immersive Comfort
@@ -102,8 +113,8 @@ const TabsSectionEN = () => {
                       </h5>
 
                       <p className="item-text mbr-fonts-style display-7">
-                        Our theater stands out for its warmth, excellent soundproofing,
-                        and distraction-free environment.
+                        Our theater stands out for its warmth, excellent
+                        soundproofing, and distraction-free environment.
                       </p>
 
                     </div>
@@ -118,7 +129,7 @@ const TabsSectionEN = () => {
                   >
                     <div className="item-content">
 
-                      <div className="image-wrap"></div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         Outstanding Performance-Level Actors
@@ -140,7 +151,7 @@ const TabsSectionEN = () => {
                   >
                     <div className="item-content">
 
-                      <div className="image-wrap"></div>
+                      <div className="image-wrap" aria-hidden="true"></div>
 
                       <h4 className="item-title mbr-fonts-style display-5 fw-bold">
                         Unforgettable Hours

@@ -1,9 +1,18 @@
 // src/components/Team.jsx
-import React from "react";
-import { useRef } from 'react'
+import React, { useRef } from "react";
 
 const Team = () => {
-  let scroll = useRef()
+  const scrollRef = useRef(null);
+
+  const scrollByAmount = (amount) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: amount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="team"
@@ -44,220 +53,93 @@ const Team = () => {
               className="embla"
               aria-roledescription="carousel"
               aria-label="Team members carousel"
-              data-align="center"
-              data-auto-play-interval="5"
-              data-contain-scroll="trimSnaps"
-              data-draggable="true"
-              data-loop="true"
-              data-skip-snaps="true"
             >
-              {/* Viewport */}
+              {/* VIEWPORT */}
               <div className="embla__viewport">
-                <div className="embla__container" ref={scroll}>
+                <div className="embla__container" ref={scrollRef}>
 
-                  {/* ====== TEAM MEMBER (Slide 1) ====== */}
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/82db3402-155f-4929-98b0-f1c1b3f9a94b.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        დავით რეხვიაშვილი
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
+                  {/* ====== TEAM MEMBER TEMPLATE ====== */}
+                  {[
+                    {
+                      name: "დავით რეხვიაშვილი",
+                      img: "/images/82db3402-155f-4929-98b0-f1c1b3f9a94b.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "ირაკლი ფირცხალავა",
+                      img: "/images/cf0e550f-722f-4edb-9327-fc8cc8466870.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "ბარბარე მომცემლიძე",
+                      img: "/images/506cabbd-994d-40dc-895e-f56f9985caf5.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "ანა ოკუჯავა",
+                      img: "/images/441b29a0-670b-4763-bdf2-18cbb9a89955.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "თათული ხუციშვილი",
+                      img: "/images/94d8d428-08cb-4073-87a6-c64f08a46d43.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "ნინო ნოზაძე",
+                      img: "/images/00bd14de-6192-4c2b-b911-1707e67d7cb9.jpg",
+                      role: "",
+                    },
+                    {
+                      name: "კობა სხილაძე",
+                      img: "/images/3099b48b-6a89-442c-8d3d-b703eda160b2.jpg",
+                      role: "რეჟისორი",
+                    },
+                  ].map((person, index) => (
+                    <article
+                      key={index}
+                      className="embla__slide slider-image item"
+                      aria-label={`Team member: ${person.name}`}
+                    >
+                      <div className="slide-content">
+                        <div className="item-wrapper little-radius">
+                          <div className="item-img">
+                            <img
+                              src={person.img}
+                              alt={`${person.name} portrait`}
+                              className="little-radius"
+                              loading="lazy"
+                            />
+                          </div>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/cf0e550f-722f-4edb-9327-fc8cc8466870.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        ირაკლი ფირცხალავა
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
+                          <div className="card-overlay little-radius"></div>
+                          <div className="blur-wrap little-radius"></div>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/506cabbd-994d-40dc-895e-f56f9985caf5.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        ბარბარე მომცემლიძე
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
+                          <div className="card-box">
+                            <h4 className="card-name mbr-fonts-style display-5">
+                              <strong>{person.name}</strong>
+                            </h4>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/441b29a0-670b-4763-bdf2-18cbb9a89955.jpg"/>
+                            {person.role && (
+                              <p className="card-role mbr-fonts-style display-7">
+                                {person.role}
+                              </p>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        ანა ოკუჯავა
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/94d8d428-08cb-4073-87a6-c64f08a46d43.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        თათული ხუციშვილი
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/00bd14de-6192-4c2b-b911-1707e67d7cb9.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        ნინო ნოზაძე
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/3099b48b-6a89-442c-8d3d-b703eda160b2.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        კობა სხილაძე
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        რეჟისორი
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  {/* TODO: Add other team members here in EXACT same structure */}
+                    </article>
+                  ))}
 
                 </div>
               </div>
 
-              {/* Slider Controls */}
+              {/* CONTROLS */}
               <button
                 type="button"
                 className="embla__button embla__button--prev"
                 aria-label="Previous slide"
-                onClick={() => {
-                  scroll.current.scrollBy({left: -360, behavior: "smooth"})
-                }}
+                onClick={() => scrollByAmount(-430)}
               >
                 <span
                   aria-hidden="true"
@@ -269,9 +151,7 @@ const Team = () => {
                 type="button"
                 className="embla__button embla__button--next"
                 aria-label="Next slide"
-                onClick={() => {
-                  scroll.current.scrollBy({left: 360, behavior: "smooth"})
-                }}
+                onClick={() => scrollByAmount(430)}
               >
                 <span
                   aria-hidden="true"

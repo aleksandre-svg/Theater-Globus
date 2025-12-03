@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      aria-label="Theater Globus hero section"
+      aria-labelledby="hero-title"
       className="header01 strengthm5 cid-v20nubbrab mbr-parallax-background"
     >
       {/* Overlay */}
@@ -26,9 +26,14 @@ const Hero = () => {
                 კეთილი იყოს თქვენი ფეხი
               </p>
 
-              <h1 className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title hero-title1">
-                თეატრი გლობუსი: ადგილი სადაც ვარკვლავები იბადებიან
-              </h1>
+              <hgroup>
+                <h1
+                  id="hero-title"
+                  className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title hero-title1"
+                >
+                  თეატრი გლობუსი: ადგილი სადაც ვარკვლავები იბადებიან
+                </h1>
+              </hgroup>
 
             </header>
           </div>
@@ -47,7 +52,7 @@ const Hero = () => {
                 <a
                   className="btn btn-white display-7"
                   href="#video-section"
-                  aria-label="ნახე ჩვენი დადგმები"
+                  role="button"
                 >
                   დადგმების ნახვა
                 </a>

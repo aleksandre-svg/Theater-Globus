@@ -36,15 +36,22 @@ const VideoSectionEN = () => {
               <figure
                 key={index}
                 className="image-wrap mb-4 w-100"
+                role="group"
+                aria-roledescription="video with caption"
                 aria-label={`Video ${index + 1}: ${video.caption}`}
               >
-                <video
-                  src={video.src}
-                  controls
-                  preload="metadata"
-                  loading="lazy"
-                  className="w-100 little-radius h-100"
-                ></video>
+                {/* FIXED ASPECT RATIO WRAPPER */}
+                <div className="video-wrapper">
+                  <video
+                    className="video-el"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    <track kind="captions" src="" label="English captions" />
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
 
                 <figcaption className="mbr-fonts-style display-7 mt-2 text-center opacity-75">
                   {video.caption}

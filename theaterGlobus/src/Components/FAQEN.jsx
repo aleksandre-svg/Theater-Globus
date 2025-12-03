@@ -2,10 +2,43 @@
 import React from "react";
 
 const FAQEN = () => {
+  const faqItems = [
+    {
+      id: 1,
+      question: "What is the dress code?",
+      answer: "Whatever you like and whatever feels comfortable."
+    },
+    {
+      id: 2,
+      question: "Can I bring food inside?",
+      answer: "No, but during the show you won’t even think about food."
+    },
+    {
+      id: 3,
+      question: "What are your opening hours?",
+      answer: "We are open from 18:00 to 21:00."
+    },
+    {
+      id: 4,
+      question: "Can I get a refund?",
+      answer: "Yes, but only if the ticket is returned as well."
+    },
+    {
+      id: 5,
+      question: "Can I take photos?",
+      answer: "Yes, but without flash."
+    },
+    {
+      id: 6,
+      question: "What happens if I am late?",
+      answer: "We will let you in as quietly as possible."
+    }
+  ];
+
   return (
     <section
       id="faq"
-      aria-label="Frequently asked questions"
+      aria-labelledby="faq-title-en"
       className="list01 strengthm5 cid-v20nubdxu9"
     >
       <div className="container-fluid">
@@ -20,6 +53,8 @@ const FAQEN = () => {
                   src="/images/logo.jpg"
                   alt="Theater FAQ background"
                   loading="lazy"
+                  width="800"
+                  height="800"
                   className="little-radius"
                 />
               </div>
@@ -28,217 +63,69 @@ const FAQEN = () => {
               <div className="content-wrapper">
                 <div className="content-wrap">
                   <div className="title-wrapper">
-                    <h2 className="mbr-section-title mbr-fonts-style display-2 fw-bold">
-                      Any Questions?
-                    </h2>
-                    <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
-                      We’ve Got the Answers
-                    </h3>
+                    <hgroup>
+                      <h2
+                        id="faq-title-en"
+                        className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                      >
+                        Any Questions?
+                      </h2>
+
+                      <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                        We’ve Got the Answers
+                      </h3>
+                    </hgroup>
                   </div>
                 </div>
 
                 {/* ACCORDION */}
                 <div
                   className="panel-group accordionStyles accordion"
-                  id="faqAccordion"
+                  id="faqAccordionEN"
                   role="tablist"
                   aria-multiselectable="true"
                 >
-
-                  {/* Q1 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading1" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse1"
-                        aria-expanded="false"
-                        aria-controls="collapse1"
+                  {faqItems.map(({ id, question, answer }) => (
+                    <article key={id} className="card little-radius">
+                      <header
+                        className="card-header"
+                        id={`headingEN${id}`}
+                        role="tab"
                       >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          What is the dress code?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
+                        <button
+                          className="panel-title collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={`#collapseEN${id}`}
+                          aria-expanded="false"
+                          aria-controls={`collapseEN${id}`}
+                        >
+                          <span className="panel-title-edit mbr-fonts-style display-4 fw-bold">
+                            {question}
+                          </span>
 
-                    <div
-                      id="collapse1"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading1"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          Whatever you like and whatever feels comfortable.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
+                          <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
+                        </button>
+                      </header>
 
-                  {/* Q2 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading2" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse2"
-                        aria-expanded="false"
-                        aria-controls="collapse2"
+                      <div
+                        id={`collapseEN${id}`}
+                        className="panel-collapse collapse noScroll"
+                        role="tabpanel"
+                        aria-labelledby={`headingEN${id}`}
+                        data-bs-parent="#faqAccordionEN"
                       >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          Can I bring food inside?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
-
-                    <div
-                      id="collapse2"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading2"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          No, but during the show you won’t even think about food.
-                        </p>
+                        <div className="panel-body">
+                          <p className="panel-text mbr-fonts-style display-7">
+                            {answer}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </article>
-
-                  {/* Q3 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading3" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse3"
-                        aria-expanded="false"
-                        aria-controls="collapse3"
-                      >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          What are your opening hours?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
-
-                    <div
-                      id="collapse3"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading3"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          We are open from 18:00 to 21:00.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Q4 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading4" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse4"
-                        aria-expanded="false"
-                        aria-controls="collapse4"
-                      >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          Can I get a refund?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
-
-                    <div
-                      id="collapse4"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading4"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          Yes, but only if the ticket is returned as well.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Q5 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading5" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse5"
-                        aria-expanded="false"
-                        aria-controls="collapse5"
-                      >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          Can I take photos?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
-
-                    <div
-                      id="collapse5"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading5"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          Yes, but without flash.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Q6 */}
-                  <article className="card little-radius">
-                    <header className="card-header" id="heading6" role="tab">
-                      <button
-                        className="panel-title collapsed"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse6"
-                        aria-expanded="false"
-                        aria-controls="collapse6"
-                      >
-                        <h4 className="panel-title-edit mbr-fonts-style display-4 fw-bold">
-                          What happens if I am late?
-                        </h4>
-                        <span className="sign mbr-iconfont mobi-mbri-arrow-down mobi-mbri"></span>
-                      </button>
-                    </header>
-
-                    <div
-                      id="collapse6"
-                      className="panel-collapse collapse noScroll"
-                      role="tabpanel"
-                      aria-labelledby="heading6"
-                      data-bs-parent="#faqAccordion"
-                    >
-                      <div className="panel-body">
-                        <p className="panel-text mbr-fonts-style display-7">
-                          We will let you in as quietly as possible.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-
+                    </article>
+                  ))}
                 </div>
                 {/* END ACCORDION */}
+
               </div>
 
             </div>

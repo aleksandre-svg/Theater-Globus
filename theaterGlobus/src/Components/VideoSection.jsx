@@ -21,7 +21,7 @@ const VideoSection = () => {
     >
       <div className="container-fluid">
         <div className="row justify-content-center">
-
+          
           {/* Section Title */}
           <header className="col-12 text-center mb-4">
             <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
@@ -31,27 +31,40 @@ const VideoSection = () => {
 
           {/* Video List */}
           <div className="col-12">
-
             {videos.map((video, index) => (
               <figure
                 key={index}
-                className="image-wrap mb-4"
+                role="group"
+                aria-roledescription="video with caption"
                 aria-label={`Video ${index + 1}: ${video.caption}`}
+                className="image-wrap mb-5 w-100"
               >
-                <video
-                  src={video.src}
-                  controls
-                  preload="metadata"
-                  loading="lazy"
-                  className="w-100 little-radius h-100"
-                ></video>
+                <div className="video-wrapper">
+                  <video
+                    className="w-100 h-100"
+                    controls
+                    preload="metadata"
+                    aria-describedby={`caption-${index}`}
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    <track
+                      kind="captions"
+                      src=""
+                      label="English captions"
+                    />
+                    Your browser does not support this video.
+                  </video>
+                </div>
 
-                <figcaption className="mbr-fonts-style display-7 mt-2 text-center opacity-75">
+                <figcaption
+                  id={`caption-${index}`}
+                  className="mbr-fonts-style display-7 mt-2 text-center opacity-75"
+                >
                   {video.caption}
                 </figcaption>
               </figure>
-            ))}
 
+            ))}
           </div>
 
         </div>

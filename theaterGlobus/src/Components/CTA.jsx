@@ -5,37 +5,38 @@ const CTA = () => {
   return (
     <section
       id="cta"
-      aria-label="Call to action section"
+      aria-labelledby="cta-title"
       className="article03 strengthm5 cid-v20nubcJSF"
     >
       <div className="container">
         <div className="row justify-content-center align-items-center">
 
-          {/* Left: Text Content */}
+          {/* LEFT: TEXT CONTENT */}
           <div className="col-12 col-lg-6 card">
             <div className="content-wrapper">
 
-              {/* Section Label */}
               <p className="mbr-label mbr-fonts-style display-7 fw-bold">
                 არ გამოტოვო
               </p>
 
-              {/* Main Title */}
-              <h2 className="mbr-section-title mbr-fonts-style display-2 fw-bold">
-                შეუკვეთე შენი ადგილი დღესვე
-              </h2>
+              <hgroup>
+                <h2
+                  id="cta-title"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                >
+                  შეუკვეთე შენი ადგილი დღესვე
+                </h2>
+              </hgroup>
 
-              {/* Description */}
               <p className="mbr-text mbr-fonts-style display-7">
                 ადგილი არის, მსახიობები მზად არიან! რას ელოდები?
               </p>
 
-              {/* CTA Button */}
               <div className="mbr-section-btn">
                 <a
                   className="btn btn-primary display-7"
-                  href="#contact" 
-                  aria-label="შეიძინე ბილეთები"
+                  href="#contact"
+                  role="button"
                 >
                   შეიძინე ბილეთები
                 </a>
@@ -43,13 +44,16 @@ const CTA = () => {
             </div>
           </div>
 
-          {/* Right: Image */}
+          {/* RIGHT: IMAGE */}
           <div className="col-12 col-lg-6 card">
             <div className="image-wrapper">
               <img
                 src="/images/logo.jpg"
                 alt="Theater Globus Logo"
                 loading="lazy"
+                width="600"
+                height="600"
+                style={{ maxWidth: "100%", height: "auto" }}
               />
             </div>
           </div>

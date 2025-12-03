@@ -1,10 +1,56 @@
 // src/components/TeamEN.jsx
-import React, { use } from "react";
-import { useRef } from 'react'
+import React, { useRef } from "react";
 
 const TeamEN = () => {
+  const scrollRef = useRef(null);
 
-  let scroll = useRef()
+  const scrollByAmount = (amount) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: amount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const teamMembers = [
+    {
+      name: "Davit Rekhviashvili",
+      img: "/images/82db3402-155f-4929-98b0-f1c1b3f9a94b.jpg",
+      role: "",
+    },
+    {
+      name: "Irakli Pirtskhilava",
+      img: "/images/cf0e550f-722f-4edb-9327-fc8cc8466870.jpg",
+      role: "",
+    },
+    {
+      name: "Barbare Momcemelidze",
+      img: "/images/506cabbd-994d-40dc-895e-f56f9985caf5.jpg",
+      role: "",
+    },
+    {
+      name: "Ana Okujava",
+      img: "/images/441b29a0-670b-4763-bdf2-18cbb9a89955.jpg",
+      role: "",
+    },
+    {
+      name: "Tatuli Khutsishvili",
+      img: "/images/94d8d428-08cb-4073-87a6-c64f08a46d43.jpg",
+      role: "",
+    },
+    {
+      name: "Nino Nozadze",
+      img: "/images/00bd14de-6192-4c2b-b911-1707e67d7cb9.jpg",
+      role: "",
+    },
+    {
+      name: "Koba Skhiladze",
+      img: "/images/3099b48b-6a89-442c-8d3d-b703eda160b2.jpg",
+      role: "Director",
+    },
+  ];
+
   return (
     <section
       id="team"
@@ -45,206 +91,51 @@ const TeamEN = () => {
               className="embla"
               aria-roledescription="carousel"
               aria-label="Team members carousel"
-              data-align="center"
-              data-auto-play-interval="5"
-              data-contain-scroll="trimSnaps"
-              data-draggable="true"
-              data-loop="true"
-              data-skip-snaps="true"
             >
               {/* Viewport */}
               <div className="embla__viewport">
-                <div className="embla__container" ref={scroll}>
+                <div className="embla__container" ref={scrollRef}>
+                  
+                  {/* Render Team Cards */}
+                  {teamMembers.map((person, i) => (
+                    <article
+                      key={i}
+                      className="embla__slide slider-image item"
+                      aria-label={`Team member: ${person.name}`}
+                    >
+                      <div className="slide-content">
+                        <div className="item-wrapper little-radius">
+                          
+                          {/* Image */}
+                          <div className="item-img">
+                            <img
+                              src={person.img}
+                              alt={`${person.name} portrait`}
+                              loading="lazy"
+                              className="little-radius"
+                            />
+                          </div>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/82db3402-155f-4929-98b0-f1c1b3f9a94b.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Davit Rekhviashvili
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
+                          {/* Effects */}
+                          <div className="card-overlay little-radius"></div>
+                          <div className="blur-wrap little-radius"></div>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/cf0e550f-722f-4edb-9327-fc8cc8466870.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Irakli Pirtskhilava
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
+                          {/* Text */}
+                          <div className="card-box">
+                            <h4 className="card-name mbr-fonts-style display-5">
+                              <strong>{person.name}</strong>
+                            </h4>
 
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/506cabbd-994d-40dc-895e-f56f9985caf5.jpg"/>
+                            {person.role && (
+                              <p className="card-role mbr-fonts-style display-7">
+                                {person.role}
+                              </p>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Barbare Momcemelidze
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/441b29a0-670b-4763-bdf2-18cbb9a89955.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Ana Okujava
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/94d8d428-08cb-4073-87a6-c64f08a46d43.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Tatuli Khutsishvili
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/00bd14de-6192-4c2b-b911-1707e67d7cb9.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Nino Nozadze
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="embla__slide slider-image item">
-                    <div class="slide-content">
-                    <div class="item-wrapper little-radius">
-                      <div class="item-img">
-                      <img alt="Mobirise Website Builder" class="little-radius" src="/images/3099b48b-6a89-442c-8d3d-b703eda160b2.jpg"/>
-                      </div>
-                      <div class="card-overlay little-radius">
-                      </div>
-                      <div class="blur-wrap little-radius">
-                      </div>
-                      <div class="card-box">
-                      <h4 class="card-name mbr-fonts-style display-5">
-                        <strong>
-                        Koba skhiladze
-                        </strong>
-                      </h4>
-                      <p class="card-role mbr-fonts-style display-7">
-                        director
-                      </p>
-                      <p class="card-text mbr-fonts-style display-7">
-                        
-                      </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                  {/* TODO: Add more team members in the same structure */}
+                    </article>
+                  ))}
 
                 </div>
               </div>
@@ -254,9 +145,7 @@ const TeamEN = () => {
                 type="button"
                 className="embla__button embla__button--prev"
                 aria-label="Previous slide"
-                onClick={() => {
-                  scroll.current.scrollBy({left: -360, behavior: "smooth"})
-                }}
+                onClick={() => scrollByAmount(-430)}
               >
                 <span
                   aria-hidden="true"
@@ -268,9 +157,7 @@ const TeamEN = () => {
                 type="button"
                 className="embla__button embla__button--next"
                 aria-label="Next slide"
-                onClick={() => {
-                  scroll.current.scrollBy({left: 360, behavior: "smooth"})
-                }}
+                onClick={() => scrollByAmount(430)}
               >
                 <span
                   aria-hidden="true"
