@@ -31,7 +31,7 @@ const Hero = () => {
                   id="hero-title"
                   className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title hero-title1"
                 >
-                  თეატრი გლობუსი: ადგილი სადაც ვარკვლავები იბადებიან
+                  თეატრი გლობუსი: ადგილი სადაც ვარსკვლავები იბადებიან
                 </h1>
               </hgroup>
 
