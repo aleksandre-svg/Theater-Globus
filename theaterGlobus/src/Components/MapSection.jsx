@@ -24,14 +24,14 @@ const MapSection = () => {
               <hgroup className="title-wrapper">
                 <h2
                   id="location-title"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title1"
                   lang="ka"
                 >
                   სადაც მაგია იქმნება
                 </h2>
 
                 <h3
-                  className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title1"
                   lang="ka"
                 >
                   ეწვიე თეატრ გლობუსს

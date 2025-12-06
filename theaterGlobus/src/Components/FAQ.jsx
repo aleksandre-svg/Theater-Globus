@@ -33,12 +33,12 @@ const FAQ = () => {
                     <hgroup>
                       <h2
                         id="faq-title"
-                        className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                        className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title3"
                       >
                         რაიმე კითხვები?
                       </h2>
 
-                      <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                      <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title3">
                         ჩვენ გვაქვს პასუხები
                       </h3>
                     </hgroup>

@@ -22,7 +22,7 @@ const CTAEN = () => {
               <hgroup>
                 <h2
                   id="cta-title-en"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title2"
                 >
                   Reserve Your Seat Today
                 </h2>

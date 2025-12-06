@@ -39,12 +39,12 @@ const GalleryVideos = () => {
               <hgroup className="title-wrapper">
                 <h2
                   id="gallery-title"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title1"
                 >
                   არაჩვეულებრივი კადრები
                 </h2>
 
-                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title1">
                   ჩვენი რეპეტიციების
                 </h3>
               </hgroup>

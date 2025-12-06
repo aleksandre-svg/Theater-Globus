@@ -39,12 +39,12 @@ const GalleryVideosEN = () => {
               <hgroup className="title-wrapper">
                 <h2
                   id="gallery-title-en"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title1"
                 >
                   Exceptional Clips
                 </h2>
 
-                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title1">
                   From Our Rehearsals
                 </h3>
               </hgroup>

@@ -66,12 +66,12 @@ const FAQEN = () => {
                     <hgroup>
                       <h2
                         id="faq-title-en"
-                        className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                        className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title3"
                       >
                         Any Questions?
                       </h2>
 
-                      <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                      <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title3">
                         We’ve Got the Answers
                       </h3>
                     </hgroup>

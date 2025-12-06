@@ -24,7 +24,7 @@ const VideoSection = () => {
           
           {/* Section Title */}
           <header className="col-12 text-center mb-4">
-            <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+            <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold  mbr-section-title1">
               თეატრი გვასწავლის თანაგრძნობას, სიყვარულს და ადამიანობის ძალას.
             </h2>
           </header>

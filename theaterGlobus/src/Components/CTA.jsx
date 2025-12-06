@@ -22,7 +22,7 @@ const CTA = () => {
               <hgroup>
                 <h2
                   id="cta-title"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title2"
                 >
                   შეუკვეთე შენი ადგილი დღესვე
                 </h2>

@@ -29,7 +29,7 @@ const HeroEN = () => {
               <hgroup>
                 <h1
                   id="hero-title-en"
-                  className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title"
+                  className="mbr-section-title mbr-fonts-style display-1 fw-bold hero-title hero-title1"
                 >
                   Theater Globus: A Place Where Stars Are Born
                 </h1>

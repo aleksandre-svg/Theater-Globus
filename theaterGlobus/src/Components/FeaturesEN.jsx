@@ -61,12 +61,12 @@ const FeaturesEN = () => {
               <hgroup className="title-wrapper">
                 <h2
                   id="features-title-en"
-                  className="mbr-section-title mbr-fonts-style display-2 fw-bold"
+                  className="mbr-section-title mbr-fonts-style display-2 fw-bold mbr-section-title1"
                 >
                   Stunning Performances
                 </h2>
 
-                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+                <h3 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold  mbr-section-title1">
                   A Look Behind the Curtain
                 </h3>
               </hgroup>

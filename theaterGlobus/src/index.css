@@ -4948,6 +4948,19 @@ i {
     .hero-title1 {
         font-size: 40px;
     }
+
+    .mbr-section-title1 {
+        font-size: 30px;
+    }
+
+    .mbr-section-title2 {
+        font-size: 35px;
+    }
+
+    .mbr-section-title3 {
+        font-size: 30px;
+        text-align: center;
+    }
 }
 
 .video-wrapper {

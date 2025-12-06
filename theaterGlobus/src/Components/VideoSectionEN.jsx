@@ -24,7 +24,7 @@ const VideoSectionEN = () => {
 
           {/* Section Title */}
           <header className="col-12 text-center mb-4">
-            <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold">
+            <h2 className="mbr-section-subtitle mbr-fonts-style display-2 fw-bold mbr-section-title1">
               Theater teaches us compassion, love, and the true strength of humanity.
             </h2>
           </header>
