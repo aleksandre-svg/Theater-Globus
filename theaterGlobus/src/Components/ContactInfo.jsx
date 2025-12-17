@@ -123,6 +123,15 @@ const ContactInfo = () => {
                       >
                         <i className="fa-brands fa-tiktok"></i>
                       </a>
+
+                      <span className="mx-3"></span>
+
+                      <a
+                        href="https://www.instagram.com/teatreglobusi/"
+                        aria-label="Visit our TikTok page"
+                      >
+                        <i className="fa-brands fa-instagram"></i>
+                      </a>
                     </strong>
                   </p>
                 </div>
