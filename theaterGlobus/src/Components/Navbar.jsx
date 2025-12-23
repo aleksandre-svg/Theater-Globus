@@ -70,7 +70,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link text-white display-4" href="#contact">
+                  <a className="nav-link text-white display-4" href="https://www.pornhub.com">
                     კონტაქტი
                   </a>
                 </li>
