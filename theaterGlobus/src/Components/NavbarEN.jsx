@@ -86,6 +86,16 @@ const NavbarEN = () => {
                   </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link
+                    className="nav-link text-white display-4"
+                    to="/actors"
+                    hreflang="ka"
+                  >
+                    Actors
+                  </Link>
+                </li>
+
               </ul>
 
               {/* CTA BUTTON */}
@@ -98,6 +108,9 @@ const NavbarEN = () => {
                   Tickets
                 </a>
               </div>
+
+
+              
             </div>
 
           </div>

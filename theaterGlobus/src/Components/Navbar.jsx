@@ -86,6 +86,16 @@ const Navbar = () => {
                   </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link
+                    className="nav-link text-white display-4"
+                    to="/actors"
+                    hreflang="en"
+                  >
+                    მსახიობები
+                  </Link>
+                </li>
+
               </ul>
 
               {/* CTA BUTTON */}
