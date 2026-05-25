@@ -4975,45 +4975,45 @@ i {
 .detailsPage { min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #1e1e2f, #2c2c44); padding: 40px; font-family: Arial; } .detailsCard { display: flex; width: 800px; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); } .detailsImage { width: 40%; } .detailsImage img { width: 100%; height: 100%; object-fit: cover; } .detailsInfo { padding: 25px; width: 60%; } .detailsInfo h1 { margin: 0; font-size: 28px; } .badge { display: inline-block; margin-top: 10px; background: #6c63ff; color: white; padding: 5px 12px; border-radius: 999px; font-size: 12px; } .infoGrid { margin-top: 20px; display: grid; gap: 8px; font-size: 14px; color: #333; } .infoGrid span { font-weight: bold; } .reasonBox { margin-top: 20px; padding: 15px; background: #f4f4ff; border-radius: 12px; } .reasonBox h3 { margin: 0 0 5px 0; } .backBtn { display: inline-block; margin-top: 20px; color: #6c63ff; text-decoration: none; font-weight: bold; }
 /* tablet */
 @media (max-width: 900px) {
-  .detailsCard {
-    width: 90%;
-  }
+    .detailsCard {
+        width: 90%;
+    }
 
-  .detailsInfo {
-    padding: 20px;
-  }
+    .detailsInfo {
+        padding: 20px;
+    }
 
-  .detailsInfo h1 {
-    font-size: 24px;
-  }
+    .detailsInfo h1 {
+        font-size: 24px;
+    }
 }
 
 /* mobile */
 @media (max-width: 600px) {
-  .detailsCard {
-    flex-direction: column; /* 🔥 მთავარი */
-    width: 100%;
-  }
+    .detailsCard {
+        flex-direction: column; /* 🔥 მთავარი */
+        width: 100%;
+    }
 
-  .detailsImage {
-    width: 100%;
-    height: 250px;
-  }
+    .detailsImage {
+        width: 100%;
+        height: 250px;
+    }
 
-  .detailsInfo {
-    width: 100%;
-    padding: 18px;
-  }
+    .detailsInfo {
+        width: 100%;
+        padding: 18px;
+    }
 
-  .detailsInfo h1 {
-    font-size: 22px;
-  }
+    .detailsInfo h1 {
+        font-size: 22px;
+    }
 
-  .infoGrid {
-    font-size: 13px;
-  }
+    .infoGrid {
+        font-size: 13px;
+    }
 
-  .reasonBox {
-    padding: 12px;
-  }
+    .reasonBox {
+        padding: 12px;
+    }
 }

@@ -95,6 +95,11 @@ const Team = () => {
                       img: "/images/3099b48b-6a89-442c-8d3d-b703eda160b2.jpg",
                       role: "რეჟისორი",
                     },
+                    {
+                      name: "შიო ლაბაძე",
+                      img: "/images/labadze.jpg",
+                      role: "მსახიობი",
+                    },
                   ].map((person, index) => (
                     <article
                       key={index}
